@@ -10,4 +10,4 @@
     3.2> dump M[i][j] in *.csv, *.json (* = 't')
 
  
-4> Convert *.csv to *.svg.
+4> Convert *.json to *.cvs to *.svg.
