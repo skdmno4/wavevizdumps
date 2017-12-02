@@ -1,16 +1,26 @@
 #include <iostream>
 #include "localtypes.h"
+#ifdef SINGLE
 #include "singlethreadimpl.hpp"
+#elif ASY
+#include "asyncimpl.hpp"
+#endif
 
 using namespace std;
 Frame2d<double> g_Points;
+const int g_TotalFrames=30;
 
 bool IsInterrupted()
 {
+    /*
     char choice;
     cout << "CONTINUE? (Y/N): ";
     cin >> choice;
     return choice == 'Y' ? false : (choice == 'y' ? false : true);
+    */
+    static int hits = 0;
+    hits++;
+    return hits < g_TotalFrames + 1 ? false : true; 
 }
 
 void ConvertFormats();
