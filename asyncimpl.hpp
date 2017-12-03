@@ -46,15 +46,16 @@ void CalculateAndDump(Frame2d<double> *pFrame)
         f.get();
     }
 
-    fs <<"{";
+    fs <<"[\n";
     for (int y = 0; y < ht; y ++)
     {
-        fs <<"{";
+        fs <<"[";
         for (int x = 0; x < wd; x ++)
         {
             fs << ' ' << (*pFrame)[y][x] << ',';
         }
-        fs <<"}\n";
+        fs <<"]\n";
     }
+    fs <<"]\n";
     fs.close();
 }
